@@ -2,12 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "install_tool_dependencies.sh",
-        "use": "@vercel/static-build"
-      },
-      {
         "src": "main.py",
         "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "main.py"
       }
     ]
   }
